@@ -78,8 +78,8 @@ export const PostPage = () => {
   }
 
   return (
-    <div className='flex justify-center items-center text-xs rounded-sm py-2 px-4'>
-      <button className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-6 ml-4 mr-5'>
+    <div className='flex justify-center items-center bg-gray-600 text-xs rounded-sm py-2 px-4'>
+      <button className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-6 ml-4'>
         <Link className='flex' to={'/'}>
           Back
         </Link>
@@ -126,13 +126,12 @@ export const PostPage = () => {
           <p className='text-white opacity-60 text-xs pt-4'>{post.text}</p>
 
           <div className='flex gap-3 items-center mt-2 justify-between'>
-            <div className='flex gap-3 mt-4 '>
+            <div className='flex gap-3 mt-4 bg-white'>
               <button className='flex items-center justify-center gap-2 text-xs text-white opacity-50'>
-                <AiFillEye /> <span>{post.views} VIEWS</span>
+                <AiFillEye /> <span>{post.views}</span>
               </button>
               <button className='flex items-center justify-center gap-2 text-xs text-white opacity-50'>
-                <AiOutlineMessage />{' '}
-                <span>{post.comments?.length || 0} LIKES</span>
+                <AiOutlineMessage /> <span>{post.comments?.length || 0} </span>
               </button>
             </div>
 
