@@ -41,7 +41,10 @@ export const AddPostPage = () => {
   };
 
   return (
-    <form className='w-1/5 mx-auto py-10' onSubmit={(e) => e.preventDefault()}>
+    <form
+      className='w-1/5 mx-auto py-10 border-2 pl-5 pr-5 rounded-r-3xl'
+      onSubmit={(e) => e.preventDefault()}
+    >
       {/* <label className='text-gray-300 py-2 bg-gray-600 text-xs mt-2 flex items-center justify-center border-2 border-dotted cursor-pointer'>
         Attach Image:
         <input
@@ -54,6 +57,11 @@ export const AddPostPage = () => {
         {image && <img src={URL.createObjectURL(image)} alt={image.name} />}
       </div> */}
 
+      <div className='text-center'>
+        <label className='text-xl text-white opacity-70 text-center'>
+          Add product
+        </label>
+      </div>
       <label className='text-xs text-white opacity-70'>
         URL:
         <input
@@ -65,7 +73,7 @@ export const AddPostPage = () => {
         />
       </label>
       <div className='flex object-cover py-2'>
-        {imgUrl2 && <img src={imgUrl2} />}
+        {imgUrl2 && <img src={imgUrl2} alt='img' />}
       </div>
 
       <label className='text-xs text-white opacity-70'>
@@ -91,7 +99,7 @@ export const AddPostPage = () => {
       </label>
 
       <label className='text-xs text-white opacity-70'>
-        Announce time:
+        Offer time:
         <input
           type='number'
           value={announceDate}
@@ -102,16 +110,20 @@ export const AddPostPage = () => {
       </label>
 
       <div className='mt-2 flex flex-row'>
-        <label className='grow w-14 text-xs text-white opacity-70'>
-          Announce:
-        </label>
-        <input
-          type='checkbox'
-          value={announce}
-          onChange={(e) => setAnnounce(e.target.checked ? 1 : 0)}
-          placeholder='Announce'
-          className='mt-1 text-black w-full rounded-lg bg-gray-400 border py-1 px-2 text-xs outline-none placeholder:text-gray-700 cursor-pointer'
-        />
+        <div className=' items-center'>
+          <label className='grow w-14 text-xs text-white opacity-70'>
+            Offer start:
+          </label>
+        </div>
+        <div>
+          <input
+            type='checkbox'
+            value={announce}
+            onChange={(e) => setAnnounce(e.target.checked ? 1 : 0)}
+            placeholder='Announce'
+            className='mt-1 text-black w-full rounded-lg bg-gray-400 border py-1 px-2 text-xs outline-none placeholder:text-gray-700 cursor-pointer'
+          />
+        </div>
       </div>
 
       <label className='text-xs text-white opacity-7'>

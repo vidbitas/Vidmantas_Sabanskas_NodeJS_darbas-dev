@@ -33,7 +33,7 @@ export const RegisterPage = () => {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className='w-1/4 h-60 mx-auto mt-40'
+      className='w-1/4 h-60 mx-auto mt-40 border-2 rounded-r-3xl p-3'
     >
       <h1 className='text-lg text-white text-center'>Registration</h1>
       <label className='text-xs text-gray-400'>

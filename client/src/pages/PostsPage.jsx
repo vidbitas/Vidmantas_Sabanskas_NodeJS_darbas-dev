@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { PostItem } from '../components/PostItem';
 import axios from '../utils/axios';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const PostsPage = () => {
   const [posts, setPosts] = useState([]);
@@ -26,11 +27,14 @@ export const PostsPage = () => {
   // if (posts.length === 0) return;
 
   return (
-    <div className='w-1/2 mx-auto py-10 flex flex-col gap-10'>
-      {posts.length > 0 &&
-        posts.map((post, idx) => (
-          <PostItem key={idx} post={post} loginUserName={loginUserName} />
-        ))}
-    </div>
+    // <Link to={`/${post._id}`}>
+    <Link to={loginUserName ? `/${posts._id}` : ''}>
+      <div className='w-1/2 mx-auto py-10 flex flex-col gap-10'>
+        {posts.length > 0 &&
+          posts.map((post, idx) => (
+            <PostItem key={idx} post={post} loginUserName={loginUserName} />
+          ))}
+      </div>
+    </Link>
   );
 };
